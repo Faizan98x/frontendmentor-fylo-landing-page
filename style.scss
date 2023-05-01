@@ -1,0 +1,445 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Raleway:wght@400;700&display=swap");
+
+// ## Colors
+
+// ### Primary Colors
+
+$Very-Dark-Blue: hsl(243, 87%, 12%);
+$Desaturated-Blue: hsl(238, 22%, 44%);
+
+// ### Accent
+
+$Bright-Blue: hsl(224, 93%, 58%);
+$Moderate-Cyan: hsl(170, 45%, 43%);
+
+// ### Neutral
+
+$Light-Grayish-Blue: hsl(240, 75%, 98%);
+$Light-Gray: hsl(0, 0%, 75%);
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+// global settings
+
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: $Light-Gray;
+  font-size: 1rem;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: $Light-Gray;
+  font-size: 1rem;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: $Light-Gray;
+  font-size: 1rem;
+}
+
+ul {
+  list-style: none;
+}
+
+.btn {
+  outline: none;
+  border: none;
+  background-color: $Bright-Blue;
+  color: $Light-Grayish-Blue;
+  font-weight: 700;
+  font-size: 1.2rem;
+  border-radius: 3px;
+  font-family: "Raleway", sans-serif;
+  padding: 1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  width: 100%;
+
+  &:hover {
+    background-color: lighten($color: $Bright-Blue, $amount: 10%);
+  }
+}
+
+.heading1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  font-family: "Raleway", sans-serif;
+}
+
+.heading2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  font-family: "Raleway", sans-serif;
+}
+
+img {
+  max-width: 50%;
+}
+
+input {
+  padding: 0.7rem;
+  width: 100%;
+  outline: none;
+  border: 0.5px solid $Light-Gray;
+}
+
+#errormsg,
+#errormsg2 {
+  color: $Light-Gray;
+  font-size: 1rem;
+  visibility: hidden;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  min-height: 100vh;
+  max-width: 100vw;
+  background-image: url(./images/bg-curve-mobile.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  // header section starts from here
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem clamp(2rem, 6.5vw, 8rem);
+
+    .logo {
+      width: 10rem;
+    }
+
+    nav {
+      ul {
+        display: flex;
+        align-items: center;
+
+        li {
+          margin-left: 2.5rem;
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+
+  //   main section stars from here
+
+  // section one starts from here
+
+  main {
+    .section1 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column-reverse;
+      padding: 2rem;
+
+      .left-side {
+        text-align: center;
+        width: 40rem;
+
+        h1 {
+          padding: 3rem 0;
+          color: $Very-Dark-Blue;
+        }
+
+        p {
+          color: $Very-Dark-Blue;
+          line-height: 1.8;
+          margin-bottom: 2rem;
+          font-size: 1.1rem;
+        }
+
+        .btn-div {
+          position: relative;
+
+          #errormsg2 {
+            position: absolute;
+            left: 0;
+            top: 35px;
+          }
+        }
+      }
+
+      .right-side {
+        padding-inline: 5rem;
+      }
+    }
+
+    .section2 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column-reverse;
+      padding: 5rem 2rem;
+
+      .left-side {
+        width: 40rem;
+        h2 {
+          text-align: center;
+          margin-block: 8rem 2rem;
+        }
+
+        p {
+          color: $Desaturated-Blue;
+          line-height: 1.8;
+          margin-bottom: 2rem;
+          font-size: 1rem;
+        }
+
+        .fylo-work {
+          margin-block: 3rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          a {
+            text-decoration: none;
+            padding-bottom: 2px;
+            color: $Moderate-Cyan;
+            border-bottom: 1.5px solid
+              lighten($color: $Moderate-Cyan, $amount: 10%);
+            display: flex;
+
+            img {
+              margin-left: 5px;
+            }
+
+            &:hover {
+              color: lighten($color: $Moderate-Cyan, $amount: 20%);
+              border-bottom: 1px solid
+                lighten($color: $Moderate-Cyan, $amount: 20%);
+            }
+          }
+        }
+
+        .card {
+          background-color: #fff;
+          padding: 2rem 3rem;
+          border-radius: 2px;
+          box-shadow: 1px 1px 10px $Light-Gray;
+
+          p {
+            color: $Very-Dark-Blue;
+          }
+
+          .info {
+            display: flex;
+            align-items: center;
+
+            img {
+              border-radius: 50%;
+              width: 12%;
+            }
+
+            .person-info {
+              text-align: start;
+              h3 {
+                margin: 0 1rem;
+              }
+              p {
+                margin: 0 1rem;
+              }
+            }
+          }
+        }
+      }
+
+      .right-side {
+        padding-inline: 3rem;
+      }
+    }
+
+    .section3 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background-color: $Desaturated-Blue;
+      padding: 10rem 2rem;
+
+      .left-side {
+        width: 35rem;
+        h1 {
+          color: #fff;
+          font-size: 1.8rem;
+          margin-bottom: 2rem;
+        }
+        p {
+          color: #fff;
+          line-height: 1.5;
+          margin-bottom: 2rem;
+        }
+      }
+
+      .right-side {
+        width: 40rem;
+        position: relative;
+      }
+    }
+  }
+
+  footer {
+    background-color: $Very-Dark-Blue;
+    padding: 5rem 2rem;
+
+    .fylo-logo {
+      width: 15rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-ul {
+      display: flex;
+      flex-direction: column;
+      .contact,
+      .nav-links,
+      .nav-links2,
+      .social-links {
+        color: #fff;
+
+        li {
+          display: flex;
+          align-items: center;
+          margin-block: 2rem;
+          cursor: pointer;
+
+          img {
+            margin-right: 1.5rem;
+          }
+        }
+      }
+
+      .nav-links,
+      .nav-links2 {
+        li {
+          &:hover {
+            color: $Bright-Blue;
+          }
+        }
+      }
+
+      .social-links {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        li {
+          width: 3rem;
+          height: 3rem;
+          border-radius: 50%;
+          border: 0.2px solid #fff;
+          padding: 0.8rem;
+          margin-inline: 0.5rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+
+          &:hover {
+            color: lighten($color: $Bright-Blue, $amount: 10%);
+            border-color: lighten($color: $Bright-Blue, $amount: 10%);
+            transition: 5ms;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    .conatiner {
+      width: 70%;
+      margin-inline: auto;
+    }
+    main {
+      .section1 {
+        flex-direction: row;
+        justify-content: space-around;
+
+        .left-side {
+          width: 35rem;
+          text-align: start;
+
+          .btn-div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            button {
+              margin-left: 5px;
+              margin-top: 0;
+              width: 70%;
+            }
+          }
+        }
+
+        .right-side {
+          padding: 0;
+        }
+      }
+
+      .section2 {
+        flex-direction: row;
+
+        .left-side {
+          h2 {
+            text-align: start;
+            font-size: 2.2rem;
+          }
+
+          .fylo-work {
+            align-items: flex-start;
+            justify-content: flex-start;
+          }
+        }
+      }
+
+      .section3 {
+        flex-direction: row;
+        justify-content: space-around;
+        text-align: start;
+
+        .right-side {
+          button {
+            width: 50%;
+          }
+        }
+      }
+    }
+
+    footer {
+      padding: 5rem;
+      .footer-ul {
+        flex-direction: row;
+        .contact {
+          width: 30rem;
+        }
+        .nav-links,
+        .nav-links2 {
+          width: 25rem;
+        }
+
+        .social-links {
+          width: 20rem;
+          align-items: flex-start;
+          justify-content: flex-start;
+        }
+      }
+    }
+  }
+}
